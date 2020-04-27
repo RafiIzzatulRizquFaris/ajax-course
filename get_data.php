@@ -4,7 +4,7 @@ $connection = openConn();
 
 $student_name = '%'.htmlspecialchars($_POST['nama_siswa']).'%';
 $nama = $_POST['nama_siswa'];
-$query = "SELECT * FROM `tbl_siswa`";
+$query = "SELECT * FROM `tbl_siswa` WHERE `nama_siswa` LIKE '%$nama%' ORDER BY `nama_siswa` ASC";
 
 $response = array();
 $result = mysqli_query($connection, $query);
